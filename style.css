@@ -3,20 +3,6 @@
     font-size: 14px
 }
 
-/* Styles for larger screens */
-@media (min-width: 768px) {
-    /* Add your desktop-specific styling here */
-}
-
-/* Styles for smaller screens (mobile) */
-@media (max-width: 767px) {
-    /* Increase font sizes, padding, etc. for mobile devices */
-    body {
-        font-size: 16px; /* Adjust as needed */
-        padding: 20px;   /* Adjust as needed */
-    }
-}
-
 
 h1{
     margin-bottom: 0px !important;
