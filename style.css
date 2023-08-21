@@ -4,10 +4,11 @@
 }
 
 
-h1{
+h1 {
     margin-bottom: 0px !important;
 }
-h2{
+
+h2 {
     color: #7b7b7b;
     font-style: italic;
 }
@@ -18,4 +19,7 @@ h2{
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.21);
 }
-a{text-decoration: none !important;}
+
+a {
+    text-decoration: none !important;
+}
