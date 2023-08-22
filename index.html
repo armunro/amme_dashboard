@@ -1,51 +1,59 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./vendor/bootstrap-5.1.0/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="/vendor/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <title>Andrew Munro</title>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6M7TC28S8"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
         dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
     gtag('config', 'G-P6M7TC28S8');
 </script>
 <body>
 <div class="d-flex flex-column justify-content-center text-center align-items-center"
      style="min-height: 100vh; margin-top:-3em">
-    <img id="avatar" src="./Avatar.png" alt="Andrew Munro's Avatar"/>
+    <img id="avatar" src="./img/avatar.png" alt="Andrew Munro's Avatar"/>
     <h1 class="text-light">Andrew Munro</h1>
     <h4 class="fst-italic text-white-50 fw-light">Software, networks, and why they suck.</h4>
-    <div class="d-inline-flex " style="margin-top:3rem">
-        <a href="https://notes.andrewmunro.me">
-            <div class="card bg-dark text-light me-3" style="width: 25rem;">
+    <div class="d-inline-flex mt-3">
+        <a class="link-card" href="https://notes.andrewmunro.me">
+            <div class="card bg-dark text-light me-3" >
                 <div class="card-body">
                     <h5 class="card-title">My Notes</h5>
                     <p class="card-text">My personal and professional notes.</p>
                 </div>
             </div>
         </a>
-        <a href="javascript:showContactModal()">
-            <div class="card bg-dark text-light" style="width: 25rem;">
+        <a class="link-card" href="https://github.com/armunro">
+            <div class="card bg-dark text-light me-3" >
                 <div class="card-body">
-                    <h5 class="card-title">Contact Me</h5>
-                    <p class="card-text">The complaint department is a garbage can.</p>
+                    <h5 class="card-title">Github</h5>
+                    <p class="card-text">Source code for some of my projects</p>
                 </div>
             </div>
         </a>
     </div>
+    <div class="d-inline-flex mt-3">
+        <a class="link-card" href="javascript:showContactModal()">
+            <div class="card bg-dark text-light" >
+                <div class="card-body">
+                    <h5 class="card-title">Contact Me</h5>
+                    <p class="card-text">The complaint department is just a garbage can</p>
+                </div>
+            </div>
+        </a>        
+    </div>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form class="form" action="https://formsubmit.co/26be25b2f239e56d5b9806d9a9bdbf18" method="POST">
+        <form class="form needs-validation" novalidate action="https://formsubmit.co/26be25b2f239e56d5b9806d9a9bdbf18" method="POST">
             <input type="hidden" name="_next" value="https://www.andrewmunro.me/index.html#thanks">
             <div class="modal-content">
                 <div class="modal-header">
@@ -53,17 +61,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name"/>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required/>
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Message" name="message" id="message"
+                        <textarea class="form-control" placeholder="Message" name="message" id="message" required
                                   style="height: 100px"></textarea>
                         <label for="message">Message</label>
                     </div>
@@ -96,24 +103,6 @@
         </div>
     </div>
 </div>
-
-<script>
-    let url = window.location.href;
-    function showContactModal() {
-        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-            keyboard: false
-        })
-        myModal.show()
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-
-        if (url.includes("#thanks")) {
-            var myModal = new bootstrap.Modal(document.getElementById('thanksModal'), {
-                keyboard: false
-            })
-            myModal.show()
-        }
-    });
-</script>
+<script src="./js/contact.js"></script>
 </body>
 </html>
